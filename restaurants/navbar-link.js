@@ -10,9 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Navbar Placeholder Found:", navbarPlaceholder);
 
     }
-  
+    
+     // Detect the base path (local or GitHub Pages)
+    const isGitHubPages = window.location.href.includes("github.io");
+    const basePath = isGitHubPages ? "/FinalProject" : ".";
+
     // Load the navbar.html file dynamically
-    fetch("/restaurants/navbar.html")
+    fetch(`${basePath}/restaurants/navbar.html`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Error loading navbar.html: ${response.statusText}`);
@@ -29,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Dynamically load the navbar.css file
         const linkElement = document.createElement("link");
         linkElement.rel = "stylesheet";
-        linkElement.href = "/restaurants/navbar.css"; // Ensure correct relative path
+        linkElement.href = `${basePath}/restaurants/navbar.css`;
         document.head.appendChild(linkElement);
   
         // Initialize navbar.js functionality after loading navbar.html
         const navbarScript = document.createElement("script");
-        navbarScript.src = "/restaurants/navbar.js"; // Path to your navbar.js
+        navbarScript.src = `${basePath}/restaurants/navbar.js`;
         navbarScript.defer = true;
          // Initialize button functionality after navbar is injected
     navbarScript.onload = () => {
