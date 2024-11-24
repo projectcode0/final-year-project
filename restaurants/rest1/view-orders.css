@@ -1,0 +1,99 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Adjustment */
+  main h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Search and Filter Section */
+  .input-group {
+    max-width: 400px;
+  }
+  
+  select.form-select {
+    min-width: 150px;
+  }
+  
+  /* Table Styling */
+  .table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table thead th {
+    background: #0056b3;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .table tbody td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .badge {
+    font-size: 0.9rem;
+  }
+  
+  .in-progress-row {
+    background-color: #fff3cd; /* Light yellow background */
+    color: #856404; /* Text color for In Progress */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .input-group {
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    select.form-select {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .table thead {
+      display: none;
+    }
+  
+    .table tbody, .table tr, .table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .table tbody tr {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ddd;
+    }
+  
+    .table td {
+      text-align: left;
+      padding: 10px;
+      position: relative;
+    }
+  
+    .table td:before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #0056b3;
+    }
+  }
+  

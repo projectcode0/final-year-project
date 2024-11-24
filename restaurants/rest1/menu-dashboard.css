@@ -1,0 +1,71 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  /* Menu Dashboard Styling */
+  .menu-dashboard {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .btn {
+    border-radius: 20px;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background: #0056b3;
+    color: white;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .menu-dashboard h1 {
+      font-size: 1.75rem;
+    }
+  
+    .card-title {
+      font-size: 1.1rem;
+    }
+  
+    .card-text {
+      font-size: 0.9rem;
+    }
+  }
+  

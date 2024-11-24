@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="menu-dashboard.css">
+  <!-- <link rel="stylesheet" href="navbar.css"> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="menu-dashboard.js" defer></script>
+  <script src="/restaurants/navbar-link.js" defer></script>
+  <!-- <script src="navbar.js" defer></script> -->
+
+</head>
+<body>
+  <!-- Navbar -->
+  <header id="navbar-placeholder"></header>
+
+  <!-- Main Content -->
+  <section class="menu-dashboard py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-primary">Manage Menu</h1>
+        <button class="btn btn-primary btn-lg" id="add-item-btn">Add New Item</button>
+      </div>
+      <div class="row gy-4">
+        <!-- Menu Cards -->
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Margherita Pizza</h5>
+              <p class="card-text">Delicious classic pizza with fresh tomatoes and mozzarella.</p>
+              <p class="text-muted">Price: $10</p>
+              <button class="btn btn-warning btn-sm">Edit</button>
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </div>
+          </div>
+        </div>
+        <!-- More menu cards can be dynamically added here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3">
+    <p class="mb-0">&copy; 2024 YummyBites. All rights reserved.</p>
+  </footer>
+
+  
+</body>
+</html>
