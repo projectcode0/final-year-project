@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Detect the base path (local or GitHub Pages)
   const isGitHubPages = window.location.href.includes("github.io");
-  const basePath = isGitHubPages ? "/FinalProject" : "../../"; // Adjusted for nested rest1 structure
+  const basePath = isGitHubPages ? "/final-year-project" : "../../"; // Adjusted for nested rest1 structure
 
   console.log("Base path detected:", basePath);
 
