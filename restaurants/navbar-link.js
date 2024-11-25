@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Base path detected:", basePath);
 
   // Fetch navbar.html
-  const navbarUrl = `${basePath}restaurants/navbar.html`;
+  const navbarUrl = `${basePath}/restaurants/navbar.html`;
   console.log("Fetching navbar.html from:", navbarUrl);
 
   fetch(navbarUrl)
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navbarPlaceholder.innerHTML = navbarHtml;
 
       // Dynamically load navbar.css
-      const cssUrl = `${basePath}restaurants/navbar.css`;
+      const cssUrl = `${basePath}/restaurants/navbar.css`;
       console.log("Loading navbar.css from:", cssUrl);
 
       const linkElement = document.createElement("link");
