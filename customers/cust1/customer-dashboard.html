@@ -3,74 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - FoodExpress</title>
-  <link rel="stylesheet" href="customer-dashboard.css">
-
-  
+  <title>Customer Dashboard</title>
+  <!-- Correct path to customer-dashboard.css -->
+  <link rel="stylesheet" href="../../customers/customer-dashboard.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Navbar Container -->
+  <div id="navbarContainer"></div>
 
-  <!-- Navbar -->
-  <header>
-    <div class="navbar">
-      <div class="logo">YummyBites</div>
-      <nav>
-        <a href="#" id="home-btn">Home</a>
-        <a href="#">Orders</a>
-        <a href="profile.html">Profile</a>
-
-        <a href="index.html">Logout</a>
-      </nav>
+  <!-- Main Dashboard Content -->
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">Welcome to YummyBites!</h1>
+    <div class="row g-4">
+      <!-- Restaurant 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow restaurant-card">
+          <img src="../../images/restaurant1.jfif" class="card-img-top" alt="Restaurant 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">The Spice Garden</h5>
+            <p class="card-text">Exquisite flavors from around the world. Perfect for any occasion!</p>
+            <button class="btn btn-primary">View Menu</button>
+          </div>
+        </div>
+      </div>
+      <!-- Restaurant 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow restaurant-card">
+          <img src="../../images/restaurant2.jfif" class="card-img-top" alt="Restaurant 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pasta Paradise</h5>
+            <p class="card-text">Authentic Italian pasta and more, made with love.</p>
+            <button class="btn btn-primary">View Menu</button>
+          </div>
+        </div>
+      </div>
+      <!-- Restaurant 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow restaurant-card">
+          <img src="../../images/restaurant3.jfif" class="card-img-top" alt="Restaurant 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sushi Samurai</h5>
+            <p class="card-text">Fresh sushi and sashimi delivered straight to your door.</p>
+            <button class="btn btn-primary">View Menu</button>
+          </div>
+        </div>
+      </div>
+      <!-- Restaurant 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow restaurant-card">
+          <img src="../../images/restaurant4.jfif" class="card-img-top" alt="Restaurant 4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Burger Bistro</h5>
+            <p class="card-text">Juicy burgers, crispy fries, and shakes you'll love.</p>
+            <button class="btn btn-primary">View Menu</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <!-- Main Content -->
-  <div class="container">
-
-    <!-- Search Bar -->
-    <div class="search-bar">
-      <input type="text" placeholder="Search for restaurants or cuisines">
-      <button>Search</button>
-    </div>
-
-    <!-- Categories -->
-    <section class="categories">
-      <h2>Popular Categories</h2>
-      <div class="category-container">
-        <div class="category-item">🍕 Pizza</div>
-        <div class="category-item">🍔 Burgers</div>
-        <div class="category-item">🍜 Asian</div>
-        <div class="category-item">🥗 Healthy</div>
-        <div class="category-item">🍰 Desserts</div>
-      </div>
-    </section>
-
-    <!-- Featured Restaurants -->
-    <section class="restaurant-list">
-      <h2>Restaurants Near You</h2>
-      <div class="restaurant-card">
-        <img src="images/restaurant1.jfif" alt="Italian Restaurant">
-        <h3>Bistro Delight</h3>
-        <p>Italian, Pizza, Desserts</p>
-        <button>View Menu</button>
-      </div>
-      <div class="restaurant-card">
-        <img src="images/restaurant2.jfif" alt="BBQ Restaurant">
-        <h3>Urban Grill</h3>
-        <p>BBQ, Burgers, Beverages</p>
-        <button>View Menu</button>
-      </div>
-      <div class="restaurant-card">
-        <img src="images/restaurant3.jfif" alt="Sushi Restaurant">
-        <h3>Sushi House</h3>
-        <p>Japanese, Sushi, Noodles</p>
-        <button>View Menu</button>
-      </div>
-    </section>
-
   </div>
 
-   <!-- Link to the external JavaScript file -->
-   <script src="customer-dashboard.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Navbar Loader -->
+  <script src="../../customers/navbar-link.js"></script>
 </body>
 </html>
