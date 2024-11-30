@@ -1,0 +1,190 @@
+/* FinalProject/common-responsive.css */
+
+/* General Reset for Consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Typography Responsiveness */
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    font-size: 16px; /* Default font size */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+  
+  /* Images and Media */
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Forms */
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Grid System */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+  
+  .col {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .col-6 {
+    flex: 0 0 50%;
+  }
+  
+  .col-4 {
+    flex: 0 0 33.33%;
+  }
+  
+  .col-3 {
+    flex: 0 0 25%;
+  }
+  
+  /* Responsive Breakpoints */
+  
+  /* Extra Large Screens (>1200px) */
+  @media (min-width: 1200px) {
+    body {
+      font-size: 18px;
+    }
+  
+    h1 {
+      font-size: 2.5em;
+    }
+  
+    h2 {
+      font-size: 2em;
+    }
+  }
+  
+  /* Large Screens (Desktops, 992px to 1199px) */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    body {
+      font-size: 17px;
+    }
+  
+    .col-6 {
+      flex: 0 0 50%;
+    }
+  }
+  
+  /* Medium Screens (Tablets, 768px to 991px) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    body {
+      font-size: 16px;
+    }
+  
+    h1 {
+      font-size: 2.2em;
+    }
+  
+    h2 {
+      font-size: 1.8em;
+    }
+  
+    .col-6, .col-4 {
+      flex: 0 0 100%; /* Full-width columns */
+    }
+  }
+  
+  /* Small Screens (Phones, 480px to 767px) */
+  @media (min-width: 480px) and (max-width: 767px) {
+    body {
+      font-size: 15px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    h2 {
+      font-size: 1.6em;
+    }
+  
+    .row {
+      flex-direction: column; /* Stack columns vertically */
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  
+  /* Extra Small Screens (<480px) */
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 1.8em;
+    }
+  
+    h2 {
+      font-size: 1.4em;
+    }
+  
+    .row {
+      flex-direction: column; /* Stack columns vertically */
+    }
+  
+    button {
+      font-size: 12px;
+      padding: 8px 10px;
+    }
+  
+    input, select, textarea {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
