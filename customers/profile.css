@@ -90,6 +90,13 @@
     background: #6a11cb;
   }
   
+  input.form-control {
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .profile-header h1 {
