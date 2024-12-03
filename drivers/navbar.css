@@ -1,0 +1,80 @@
+/* Navbar styling */
+.navbar {
+    background-color: #343a40;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff !important;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    background-color: #495057;
+    border-radius: 5px;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff;
+  }
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .navbar-toggler {
+      border-color: #ffffff;
+    }
+  
+    .navbar-nav {
+      margin-top: 1rem;
+    }
+  
+    .nav-link {
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 1px solid #f8f9fa;
+    }
+  
+    .nav-link:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  /* Button styling */
+  .btn-outline-light {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #343a40;
+    border-color: #ffffff;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  /* Styling for the container of the navbar (to center it) */
+  #navbar-container {
+    width: 100%;
+  }
+  
+  /* Adding some spacing at the bottom of the navbar */
+  .navbar .container-fluid {
+    padding-bottom: 1rem;
+  }
+  

@@ -1,82 +1,167 @@
-/* Navbar Styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4caf50; /* Green theme for drivers */
-    padding: 10px 20px;
-    color: white;
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+/* Cards */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.list-group-item {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+/* Card Header */
+.card-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Order Overview Section */
+.card-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card-body li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-body li:last-child {
+  border-bottom: none;
+}
+
+/* Pending and Completed Deliveries */
+.badge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+/* Action Buttons */
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  /* Stack columns vertically for small screens */
+  .row {
+    flex-direction: column;
   }
-  
-  .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navbar nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1rem;
-  }
-  
-  .navbar nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Dashboard Styles */
-  .dashboard {
-    padding: 20px;
-    background-color: #f9f9f9;
-    min-height: 80vh;
-    text-align: center;
-  }
-  
-  .dashboard h1 {
-    color: #333;
-    font-size: 2rem;
-  }
-  
-  .dashboard p {
-    color: #666;
-    font-size: 1rem;
+
+  .col-md-6 {
     margin-bottom: 20px;
   }
-  
-  /* Cards */
-  .dashboard-content {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+
+  .btn-lg {
+    width: 100%;
   }
-  
+
+  /* Adjust card sizes for smaller screens */
   .card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
   }
-  
-  .card h2 {
-    color: #4caf50; /* Match the navbar's green theme */
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+
+  /* Adjust the size of the order overview details */
+  .list-group-item {
+    font-size: 0.95rem;
   }
-  
-  .card p {
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
+}
+
+/* Mobile Navbar Toggler Button */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  margin: 6px 0;
+}
+
+/* Navbar Active State */
+.navbar-nav .nav-item.active {
+  font-weight: bold;
+  color: #007bff !important;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  padding: 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}

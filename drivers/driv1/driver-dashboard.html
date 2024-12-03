@@ -4,46 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Driver Dashboard</title>
-  <link rel="stylesheet" href="driver-dashboard.css">
-  <script src="driver-dashboard.js" defer></script>
+  
+  <!-- Dynamically load responsive CSS -->
+  <script>
+    const isGitHubPages = window.location.href.includes("github.io");
+    const basePath = isGitHubPages ? "/final-year-project" : "../../";
+    const loaderScript = document.createElement("script");
+    loaderScript.src = `${basePath}/dynamic-js-loader.js`;
+    loaderScript.defer = true;
+    document.head.appendChild(loaderScript);
+  </script>
+
+  <!-- Optional favicon -->
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <div class="navbar">
-      <div class="logo">YummyBites - Driver Panel</div>
-      <nav>
-        <a href="#" id="home-btn">Home</a>
-        <a href="#" id="deliveries-btn">View Deliveries</a>
-        <a href="#" id="logout-btn">Logout</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Navbar will be dynamically loaded here -->
+  <div id="navbar-container"></div>
 
   <!-- Main Content -->
-  <section class="dashboard">
-    <h1>Welcome, [Driver Name]</h1>
-    <p>Manage your delivery tasks efficiently.</p>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Order Overview Section -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Order Overview</h5>
+            <p class="card-text">Quick summary of your deliveries and orders.</p>
+            <ul class="list-group">
+              <li class="list-group-item">Total Orders: <strong>35</strong></li>
+              <li class="list-group-item">Pending Deliveries: <strong>12</strong></li>
+              <li class="list-group-item">Completed Deliveries: <strong>23</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    <div class="dashboard-content">
-      <div class="card">
-        <h2>Deliveries Assigned</h2>
-        <p>10</p>
+      <!-- Pending Deliveries Section -->
+      <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Pending Deliveries</h5>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span>Order #1324</span>
+                <span class="badge badge-warning float-right">Pending</span>
+              </li>
+              <li class="list-group-item">
+                <span>Order #1345</span>
+                <span class="badge badge-warning float-right">Pending</span>
+              </li>
+              <li class="list-group-item">
+                <span>Order #1367</span>
+                <span class="badge badge-warning float-right">Pending</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h2>Deliveries Completed</h2>
-        <p>8</p>
-      </div>
-      <div class="card">
-        <h2>Pending Deliveries</h2>
-        <p>2</p>
+
+      <!-- Completed Deliveries Section -->
+      <div class="col-lg-4 col-md-12 mt-4 mt-lg-0">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Completed Deliveries</h5>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span>Order #1289</span>
+                <span class="badge badge-success float-right">Completed</span>
+              </li>
+              <li class="list-group-item">
+                <span>Order #1302</span>
+                <span class="badge badge-success float-right">Completed</span>
+              </li>
+              <li class="list-group-item">
+                <span>Order #1315</span>
+                <span class="badge badge-success float-right">Completed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    
+    <!-- Actions Section -->
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <button class="btn btn-primary btn-lg w-100">Start New Delivery</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-secondary btn-lg w-100">View All Orders</button>
+      </div>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 YummyBites</p>
-  </footer>
+  <!-- Dynamic JS for loading the navbar -->
+  <script src="../../drivers/navbar-link.js" defer></script>
+
 </body>
 </html>
