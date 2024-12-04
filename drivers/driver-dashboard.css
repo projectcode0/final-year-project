@@ -1,0 +1,163 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #343a40;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 1rem 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #495057;
+}
+
+/* Main Content */
+.main-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+}
+
+
+  #navbar-container .navbar-nav {
+    flex-direction: row !important;
+    display: flex !important;
+  }
+
+  #navbar-container .nav-link {
+    margin-right: 10px !important;
+  }
+
+
+/* Responsive Design for All Screen Sizes */
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-container {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    margin-bottom: 1rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .sidebar ul li {
+    margin: 0.5rem 0;
+  }
+
+  .card {
+    padding: 0.5rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+

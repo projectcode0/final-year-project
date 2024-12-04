@@ -25,6 +25,18 @@
     background-color: #fff;
   }
   
+  .navbar-nav {
+    flex-direction: row; /* Ensures horizontal alignment */
+  }
+  
+  .nav-link {
+    margin-right: 10px; /* Adds spacing between links */
+  }
+  
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Optional: adjusts the appearance of the toggle button */
+  }
+  
   /* Responsive Navbar */
   @media (max-width: 768px) {
     .navbar-toggler {
@@ -78,3 +90,11 @@
     padding-bottom: 1rem;
   }
   
+/* Ensure navbar styles are not overridden */
+#navbar-container .navbar-nav {
+  flex-direction: row !important;
+}
+
+#navbar-container .nav-link {
+  margin-right: 10px !important;
+}

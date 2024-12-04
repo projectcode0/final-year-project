@@ -1,0 +1,64 @@
+/* profile.css */
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+  }
+  
+  .card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Label and Input Styling */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  input.form-control {
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+  }
+  
+  /* Edit and Save Button Styling */
+  #save-btn {
+    margin-top: 15px;
+    display: none;
+  }
+  
+  /* Ensure the layout looks good on small screens */
+  @media (max-width: 767px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .card {
+      padding: 15px;
+    }
+  
+    button {
+      padding: 10px;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 768px) {
+    .container {
+      max-width: 600px;
+    }
+  
+    button {
+      padding: 14px;
+    }
+  }
+  
+  

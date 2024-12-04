@@ -8,33 +8,55 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Common Responsive CSS (loaded dynamically through dynamic-js-loader.js) -->
+    <!-- Menu CSS -->
+    <link rel="stylesheet" href="../../restaurants/menu.css"> <!-- Directly linking menu.css -->
+
+    <!-- Menu JS -->
+    <script src="../../restaurants/menu.js" defer></script> <!-- Directly linking menu.js -->
+
     <script>
+        // Base path calculation for GitHub vs local
         const isGitHubPages = window.location.href.includes("github.io");
         const basePath = isGitHubPages ? "/final-year-project" : "../..";
 
-        // Dynamically load the dynamic-js-loader.js for loading common-responsive.css
-        const loaderScript = document.createElement("script");
-        loaderScript.src = `${basePath}/dynamic-js-loader.js`;
-        loaderScript.defer = true;
-        document.head.appendChild(loaderScript);
+        // Function to load navbar-link.js
+        function loadNavbar() {
+            const navbarLinkScript = document.createElement("script");
+            navbarLinkScript.src = `${basePath}/customers/navbar-link.js`; // Path to navbar-link.js
+            navbarLinkScript.defer = true;
+
+            // Append the script to head so navbar can be loaded
+            document.head.appendChild(navbarLinkScript);
+
+            // Once the script is loaded, we can safely show the content
+            navbarLinkScript.onload = function() {
+                console.log("Navbar loaded successfully.");
+                showContent();
+            };
+
+            // If script fails to load
+            navbarLinkScript.onerror = function() {
+                console.error("Error loading navbar-link.js");
+            };
+        }
+
+        // Function to display page content
+        function showContent() {
+            const contentSection = document.getElementById("contentSection");
+            contentSection.style.display = "block"; // Show content after navbar is loaded
+        }
+
+        // Load navbar when page loads
+        window.onload = loadNavbar;
     </script>
-
-
-
-<!-- Menu CSS -->
-<link rel="stylesheet" href="../../restaurants/menu.css"> <!-- Directly linking menu.css -->
-
-<!-- Menu JS -->
-    <script src="../../restaurants/menu.js" defer></script> <!-- Directly linking menu.js -->
 </head>
 <body>
 
-    <!-- Navbar will be dynamically loaded -->
-    <div id="navbarContainer"></div>
+    <!-- Navbar will be dynamically loaded by navbar-link.js -->
+    <div id="navbarContainer"></div> <!-- Navbar will be inserted here -->
 
-    <!-- Content Section -->
-    <div class="container mt-5">
+    <!-- Content Section (hidden initially) -->
+    <div id="contentSection" class="container mt-5" style="display: none;">
         <h1>Restaurant Menu</h1>
 
         <div id="menu-items" class="row">
@@ -50,27 +72,7 @@
             <button id="checkout-btn" class="btn btn-primary" disabled>Proceed to Checkout</button>
         </div>
     </div>
-    
-    <!-- Navbar script loading from customer side -->
-    <script>
-        const navbarLinkScript = document.createElement("script");
-        navbarLinkScript.src = `${basePath}/customers/navbar-link.js`;  // Correct path to navbar-link.js
-        navbarLinkScript.defer = true;
 
-        // Event listener for when navbarLinkScript finishes loading
-        navbarLinkScript.onload = () => {
-            console.log("Navbar script has been loaded successfully.");
-        };
-
-        // Handle script error
-        navbarLinkScript.onerror = () => {
-            console.error("Failed to load navbar script.");
-        };
-
-        // Append the script to load the navbar dynamically
-        document.body.appendChild(navbarLinkScript);
-    
-    </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 

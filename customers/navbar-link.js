@@ -1,3 +1,6 @@
+
+console.log("navbar-link.js is being executed.");
+
 document.addEventListener("DOMContentLoaded", () => {
   // Detect environment: GitHub Pages or local server
   const isGitHubPages = window.location.href.includes("github.io");
@@ -17,14 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbarCssPath = `${basePath}/customers/navbar.css`;
 
     // Fetch and insert navbar HTML
+    console.log("Fetching navbar HTML...");
     fetch(navbarHtmlPath)
       .then(response => {
+        console.log(`Fetching navbar HTML from: ${navbarHtmlPath}`);
         if (!response.ok) {
           throw new Error(`Failed to fetch navbar HTML: ${response.statusText}`);
         }
         return response.text();
       })
       .then(navbarHtml => {
+
+        console.log("Navbar HTML fetched successfully.");
         // Insert only the <nav> content into the #navbarContainer
         const parser = new DOMParser();
         const doc = parser.parseFromString(navbarHtml, "text/html");
