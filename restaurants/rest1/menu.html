@@ -13,8 +13,20 @@
 
     <!-- Menu JS -->
     <script src="../../restaurants/menu.js" defer></script> <!-- Directly linking menu.js -->
+    <script src="../../customers/navbar-link.js" defer></script> <!-- Directly linking menu.js -->
+   
+   <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM fully loaded and parsed.");
+    
+            // Show the content section after rendering the menu
+            const contentSection = document.getElementById("contentSection");
+            contentSection.style.display = "block";
+        });
+    </script>
+    
 
-    <script>
+    <!-- <script>
         // Base path calculation for GitHub vs local
         const isGitHubPages = window.location.href.includes("github.io");
         const basePath = isGitHubPages ? "/final-year-project" : "../..";
@@ -48,7 +60,7 @@
 
         // Load navbar when page loads
         window.onload = loadNavbar;
-    </script>
+    </script> -->
 </head>
 <body>
 

@@ -56,11 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const menuBtn = document.getElementById("menu-btn");
         const ordersBtn = document.getElementById("orders-btn");
         const logoutBtn = document.getElementById("logout-btn");
+        const profileBtn = document.getElementById("profile-btn");
+
 
         if (homeBtn) homeBtn.addEventListener("click", () => window.location.href = `${basePath}/restaurants/rest1/restaurant-dashboard.html`);
         if (menuBtn) menuBtn.addEventListener("click", () => window.location.href = `${basePath}/restaurants/rest1/menu-dashboard.html`);
         if (ordersBtn) ordersBtn.addEventListener("click", () => window.location.href = `${basePath}/restaurants/rest1/view-orders.html`);
         if (logoutBtn) logoutBtn.addEventListener("click", () => window.location.href = `${basePath}/index.html`);
+        if (profileBtn) profileBtn.addEventListener("click", () => window.location.href = `${basePath}/restaurants/rest1/profile.html`);
       })
 
     //   navbarScript.onerror = () => {

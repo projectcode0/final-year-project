@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant 1 Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../restaurants/profile.css">
+</head>
+<body>
+    <!-- Navbar will be injected here by navbar-link.js -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-lg rounded-3 profile-card">
+                <div class="text-center pt-4">
+                    <img src="../../images/restaurant1.jfif" alt="Restaurant Image" class="profile-image img-fluid rounded-circle">
+                    <div class="mt-3">
+                        <h3 class="fw-bold">Restaurant 1</h3>
+                        <p class="text-muted">Restaurant Profile</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5>Profile Information</h5>
+                    <ul>
+                        <li><strong>Name: </strong><span id="name">Restaurant Name</span><input type="text" id="nameInput" style="display:none;"></li>
+                        <li><strong>Email: </strong><span id="email">restaurant@example.com</span><input type="email" id="emailInput" style="display:none;"></li>
+                        <li><strong>Phone: </strong><span id="phone">+1234567890</span><input type="tel" id="phoneInput" style="display:none;"></li>
+                        <li><strong>Address: </strong><span id="address">123 Main St</span><input type="text" id="addressInput" style="display:none;"></li>
+                        <li><strong>Profile Picture: </strong><img src="../../images/order-icon.png" id="profileImage" class="profile-image">
+                            <input type="file" id="fileInput" style="display:none;">
+                        </li>
+                    </ul>
+                    <button id="editButton" class="btn btn-warning">Edit</button>
+                    <button id="saveButton" class="btn btn-success" style="display:none;">Save</button>
+                    <button id="cancelButton" class="btn btn-danger" style="display:none;">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to Edit Profile -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="mb-3">
+                            <label for="profileImage" class="form-label">Profile Image</label>
+                            <input type="file" class="form-control" id="profileImage" accept="image/*">
+                        </div>
+                        <div class="mb-3">
+                            <label for="restaurantName" class="form-label">Restaurant Name</label>
+                            <input type="text" class="form-control" id="restaurantName" value="Restaurant 1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" value="restaurant1@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" value="+123456789">
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" value="Downtown City">
+                        </div>
+                        <div class="mb-3">
+                            <label for="about" class="form-label">About</label>
+                            <textarea class="form-control" id="about" rows="3">Serving the best dishes in town!</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="editProfileForm">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../restaurants/profile.js"></script>
+    <script src="../../restaurants/navbar-link.js"></script>
+</body>
+</html>

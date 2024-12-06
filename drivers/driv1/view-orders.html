@@ -24,6 +24,9 @@
   <!-- Common CSS for driver pages (can be shared) -->
   <link rel="stylesheet" href="../../drivers/view-orders.css">
 
+  <!-- View Orders JS -->
+  <script src="../../drivers/driv1/view-orders.js" defer></script>
+
 </head>
 <body>
   <!-- Navbar will be dynamically loaded here -->
@@ -63,6 +66,26 @@
             <p class="card-text">Pending delivery. Assigned to you.</p>
             <button class="btn btn-primary w-100">View Details</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for showing order details -->
+  <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderDetailsModalLabel">Order Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+          <p><strong>Status:</strong> <span id="orderStatus"></span></p>
+          <p id="orderDetails"></p> <!-- Here we can show more order details -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

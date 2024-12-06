@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {  
+document.addEventListener("DOMContentLoaded", () => {
     console.log("Script is running");
 
     const menuItems = [
@@ -73,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
             imgSrc: "https://via.placeholder.com/300x200?text=Chocolate+Cake"
         }
     ];
-    
 
     const menuContainer = document.getElementById("menu-items");
     const cartItemsList = document.getElementById("cart-items");
@@ -120,6 +119,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 cart.push({ ...item, quantity: 1 });
             }
 
+            // Replace the "Add to Cart" button with the quantity controls
+            const addToCartButton = e.target;
+            const quantityControls = document.createElement("div");
+            quantityControls.classList.add("quantity-controls");
+
+            quantityControls.innerHTML = `
+                <button class="decrease-quantity btn btn-sm btn-secondary" data-id="${item.id}">-</button>
+                <input type="text" class="quantity-input" value="1" data-id="${item.id}">
+                <button class="increase-quantity btn btn-sm btn-secondary" data-id="${item.id}">+</button>
+            `;
+
+            addToCartButton.replaceWith(quantityControls);
+
             renderCart();
         }
     });
@@ -133,16 +145,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const cartItem = document.createElement("li");
             cartItem.classList.add("d-flex", "justify-content-between", "align-items-center", "mb-2");
 
+               // Display quantity and price like "2 x $9.99"
             cartItem.innerHTML = `
-                <span class="item-name">${item.name}</span>
-                <div class="quantity-controls">
-                    <button class="decrease-quantity btn btn-sm btn-secondary" data-id="${item.id}">-</button>
-                    <input type="text" class="quantity-input" value="${item.quantity}" data-id="${item.id}">
-                    <button class="increase-quantity btn btn-sm btn-secondary" data-id="${item.id}">+</button>
-                </div>
-                <span>$${(item.price * item.quantity).toFixed(2)}</span>
-            `;
-
+            <span class="item-name">${item.name} - ${item.quantity} x $${item.price.toFixed(2)}</span>
+            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        `;
             cartItemsList.appendChild(cartItem);
         });
 
@@ -155,24 +162,27 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCheckoutButton();
     }
 
-    // Handle quantity changes
-    cartItemsList.addEventListener("click", (e) => {
+    // Handle quantity changes for increase and decrease buttons
+    menuContainer.addEventListener("click", (e) => {
         const itemId = Number(e.target.getAttribute("data-id"));
+        const item = cart.find(i => i.id === itemId);
 
         if (e.target.classList.contains("increase-quantity")) {
-            const item = cart.find(i => i.id === itemId);
             item.quantity += 1;
             renderCart();
+            // Update the displayed quantity in the input
+            document.querySelector(`input[data-id="${itemId}"]`).value = item.quantity;
         }
 
         if (e.target.classList.contains("decrease-quantity")) {
-            const item = cart.find(i => i.id === itemId);
             if (item.quantity > 1) {
                 item.quantity -= 1;
             } else {
                 cart = cart.filter(i => i.id !== itemId); // Remove item if quantity is 0
             }
             renderCart();
+            // Update the displayed quantity in the input
+            document.querySelector(`input[data-id="${itemId}"]`).value = item.quantity;
         }
     });
 
@@ -186,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (newQuantity >= 1) {
                 item.quantity = newQuantity;
             } else {
-                e.target.value = item.quantity;
+                e.target.value = item.quantity; // If input is less than 1, reset to current quantity
             }
 
             renderCart();
@@ -198,7 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const checkoutButton = document.getElementById("checkout-btn");
         checkoutButton.disabled = cart.length === 0;
     }
-
+    // Handle "Proceed to Checkout" button
+    const checkoutButton = document.getElementById("checkout-btn");
+    checkoutButton.addEventListener("click", () => {
+        const cartData = JSON.stringify(cart);
+        sessionStorage.setItem("cart", cartData); // Store cart data in session storage
+        window.location.href = "../../customers/payment.html"; // Redirect to payment page
+    });
+    
     // Initial render of menu and cart
     renderMenuItems();
 });

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Payment Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Payment Page CSS -->
+  <link rel="stylesheet" href="../../customers/payment.css">
+
+  <!-- Dynamic JS loader -->
+  <script>
+    const isGitHubPages = window.location.href.includes("github.io");
+    const basePath = isGitHubPages ? "/final-year-project" : "../..";
+    const dynamicJs = document.createElement("script");
+    dynamicJs.src = `${basePath}/dynamic-js-loader.js`;
+    dynamicJs.defer = true;
+    document.head.appendChild(dynamicJs);
+  </script>
+</head>
+
+<body>
+  <!-- Navbar will be loaded dynamically via navbar-link.js -->
+  <div id="navbarContainer"></div>
+
+  <!-- Payment Form Section -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Payment Information</h1>
+    <form id="payment-form">
+      <div class="row">
+        <!-- Card Information -->
+        <div class="col-md-6 mb-3">
+          <label for="card-number" class="form-label">Card Number</label>
+          <input type="text" class="form-control" id="card-number" placeholder="Enter card number" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="expiry-date" class="form-label">Expiry Date</label>
+          <input type="text" class="form-control" id="expiry-date" placeholder="MM/YY" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="text" class="form-control" id="cvv" placeholder="Enter CVV" required>
+        </div>
+
+        <!-- Billing Information -->
+        <div class="col-md-6 mb-3">
+          <label for="billing-name" class="form-label">Billing Name</label>
+          <input type="text" class="form-control" id="billing-name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="billing-address" class="form-label">Billing Address</label>
+          <input type="text" class="form-control" id="billing-address" placeholder="Enter your address" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="billing-city" class="form-label">City</label>
+          <input type="text" class="form-control" id="billing-city" placeholder="Enter city" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="billing-zip" class="form-label">Zip Code</label>
+          <input type="text" class="form-control" id="billing-zip" placeholder="Enter zip code" required>
+        </div>
+
+        <!-- Payment Button -->
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100">Make Payment</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Payment Confirmation Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="paymentModalLabel">Payment Successful</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Your payment has been successfully processed. Thank you for your purchase!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="../../customers/order-history.html" class="btn btn-primary">View Orders</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Payment Page JS -->
+  <script src="../../customers/payment.js"></script>
+</body>
+
+</html>
